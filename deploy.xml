@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploydescriptor>
 	<global>
-		<version>131</version>
-		<patchlevel>1</patchlevel>
+		<version>140</version>
 		<id>collaboration</id>
 		<license>GPL-v2</license>
 		<vendor>Ontoprise GmbH</vendor>
@@ -14,6 +13,7 @@
 		<helpurl>http://smwforum.ontoprise.com/smwforum/index.php/Help:Collaboration_Extension</helpurl>
 		<dependencies>
 			<dependency from="153" to="153">smwplus</dependency>
+			<dependency from="092" optional="true">widgets</dependency>
 		</dependencies>
 		<notice>
 "Your Wiki contains now new pages. Since existing pages can make
