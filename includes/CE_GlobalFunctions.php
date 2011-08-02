@@ -39,6 +39,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * etc.
  */
 function enableCollaboration() {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $cegIP, $cegEnableCollaboration,  $cegEnableComment,
 	$wgExtensionMessagesFiles, $wgExtensionAliasesFiles, $wgExtensionFunctions, $wgAutoloadClasses, $wgHooks;
 
@@ -64,6 +65,7 @@ function enableCollaboration() {
 
 	//so that other extensions know about the Collaboration-Extension
 	$cegEnableCollaboration = true;
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
 
 	return true;
 }
@@ -76,14 +78,13 @@ function enableCollaboration() {
  * credits, and init some globals that are not for configuration settings.
  */
 function cefSetupExtension() {
-	wfProfileIn('cefSetupExtension');
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $cegIP, $wgHooks, $wgParser, $wgExtensionCredits,
 	$wgLanguageCode, $wgVersion, $wgRequest, $wgContLang,
 	$cegEnableComment, $cegEnableCurrentUsers;
 
 	//--- Register hooks ---
 	#global $wgHooks;
-
 	wfLoadExtensionMessages('Collaboration');
 
 	///// Register specials pages
@@ -97,7 +98,7 @@ function cefSetupExtension() {
 	if (stripos($wgRequest->getRequestURL(), $spns_text.":Collaboration") !== false
 		|| stripos($wgRequest->getRequestURL(), $spns_text."%3ACollaboration") !== false) {
 		$wgHooks['BeforePageDisplay'][]='cefAddSpecialPageHeader';
-	}else {
+	} else {
 		$wgHooks['BeforePageDisplay'][]='cefAddNonSpecialPageHeader';
 	}
 
@@ -117,7 +118,7 @@ function cefSetupExtension() {
 
 	### Register autocompletion icon ###
 	$wgHooks['smwhACNamespaceMappings'][] = 'cefRegisterACIcon';
-	wfProfileOut('cefSetupExtension');
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
 
 	return true;
 }
@@ -130,6 +131,7 @@ function cefSetupExtension() {
  * @return bool: true
  */
 function cefAddNonSpecialPageHeader(&$out) {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $cegScriptPath, $wgRequest,$wgContLang;
 
 	$spns_text = $wgContLang->getNsText(NS_SPECIAL);
@@ -146,7 +148,9 @@ function cefAddNonSpecialPageHeader(&$out) {
 	$out->addScript("<script type=\"text/javascript\" src=\"". $cegScriptPath .  "/scripts/Comment/CE_Comment.js\"></script>");
 
 	$out->addStyle($cegScriptPath. '/skins/Comment/collaboration-comment.css', 'screen, projection');
-    $out->addStyle($cegScriptPath. '/skins/Comment/collaboration-overlay.css', 'screen, projection');
+	$out->addStyle($cegScriptPath. '/skins/Comment/collaboration-overlay.css', 'screen, projection');
+
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
 
 	return true;
 }
@@ -159,9 +163,11 @@ function cefAddNonSpecialPageHeader(&$out) {
  * @return bool: true
  */
 function cefAddSpecialPageHeader(&$out) {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $smwgScriptPath, $wgTitle, $wgUser;
 	//SMW_sorttableto handle table sorting
 	if ($wgTitle->getNamespace() != NS_SPECIAL) {
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
 		return true;
 	} else {
 		$out->addScript("<script type=\"text/javascript\" src=\"". $smwgScriptPath .  "/skins/SMW_sorttable.js\"></script>");
@@ -172,6 +178,7 @@ function cefAddSpecialPageHeader(&$out) {
 			'media' => 'screen, projection',
 			'href'  => $smwgScriptPath. '/skins/SMW_custom.css'
 		));
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
 		return true;
 	}
 }
@@ -186,6 +193,7 @@ function cefAddSpecialPageHeader(&$out) {
  * greater or equal to 100.
  */
 function cefInitNamespaces() {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $cegCommentNamespaceIndex, $wgExtraNamespaces, $wgNamespaceAliases,
 	$wgNamespacesWithSubpages, $wgLanguageCode, $cegContLang;
 
@@ -212,6 +220,8 @@ function cefInitNamespaces() {
 	global $smwgNamespacesWithSemanticLinks;
 	$smwgNamespacesWithSemanticLinks[CE_COMMENT_NS] = true;
 
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
+
 	return true;
 }
 
@@ -235,11 +245,11 @@ function cefAddMagicWords(&$magicWords, $langCode) {
  * can be initialised much later when they are actually needed.
  */
 function cefInitContentLanguage($langcode) {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $cegIP, $cegContLang;
 	if (!empty($cegContLang)) {
 		return;
 	}
-	wfProfileIn('cefInitContentLanguage');
 
 	$ceContLangFile = 'CELanguage' . str_replace( '-', '_', ucfirst( $langcode ) );
 	$ceContLangClass = 'CELanguage' . str_replace( '-', '_', ucfirst( $langcode ) );
@@ -254,18 +264,21 @@ function cefInitContentLanguage($langcode) {
 	}
 	$cegContLang = new $ceContLangClass();
 
-	wfProfileOut('cefInitContentLanguage');
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
 
 	return true;
 }
 
 function cefInitMessages() {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $cegMessagesInitialized;
 	if (isset($cegMessagesInitialized)) return; // prevent double init
 
 	cefInitUserMessages(); // lazy init for ajax calls
 
 	$cegMessagesInitialized = true;
+
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
 
 	return true;
 }
@@ -274,6 +287,7 @@ function cefInitMessages() {
  * Registers Collaboration extension User messages.
  */
 function cefInitUserMessages() {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $wgMessageCache, $cegContLang, $wgLanguageCode;
 	cefInitContentLanguage($wgLanguageCode);
 
@@ -295,6 +309,8 @@ function cefInitUserMessages() {
 
 	$wgMessageCache->addMessages($cegLang->getUserMsgArray(), $wgLang->getCode());
 
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
+
 	return true;
 }
 
@@ -302,6 +318,7 @@ function cefInitUserMessages() {
  * Add appropriate JS language script
  */
 function cefAddJSLanguageScripts(&$out, $mode = "all", $namespace = -1, $pages = array()) {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $wgLanguageCode, $cegIP, $cegScriptPath, $wgUser;
 
 	// content language file
@@ -334,6 +351,9 @@ function cefAddJSLanguageScripts(&$out, $mode = "all", $namespace = -1, $pages =
 		$out->addScript("<script type=\"text/javascript\" src=\"".$cegScriptPath.
 			"/scripts/Language/CE_LanguageUserEn.js\"></script>");
 	}
+
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
+
 	return true;
 }
 

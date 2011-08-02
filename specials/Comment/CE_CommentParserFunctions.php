@@ -40,16 +40,19 @@ $wgHooks['LanguageGetMagic'][] = 'cefCommentLanguageGetMagic';
 
 
 function cefInitCommentParserfunctions() {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $wgParser;
 
 	CECommentParserFunctions::getInstance();
 
 	$wgParser->setFunctionHook('showcommentform', array('CECommentParserFunctions', 'showcommentform'));
 	$wgParser->setFunctionHook('averagerating', array('CECommentParserFunctions', 'getAverageRating'));
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
 	return true;
 }
 
 function cefCommentLanguageGetMagic( &$magicWords, $langCode ) {
+	wfProfileIn( __METHOD__ . ' [Collaboration]' );
 	global $cegContLang;
 	$magicWords['showcommentform']
 		= array(0, $cegContLang->getParserFunction( CELanguage::CE_PF_SHOWFORM )
@@ -57,6 +60,7 @@ function cefCommentLanguageGetMagic( &$magicWords, $langCode ) {
 	$magicWords['averagerating']
 		= array( 0, $cegContLang->getParserFunction( CELanguage::CE_PF_AVGRATING )
 	);
+	wfProfileOut( __METHOD__ . ' [Collaboration]' );
 
 	return true;
 }
@@ -129,6 +133,7 @@ class CECommentParserFunctions {
 	 * 			... if there's sthg wrong, that can not be caught by CE itself
 	 */
 	public static function showcommentform(&$parser) {
+		wfProfileIn( __METHOD__ . ' [Collaboration]' );
 		global $cegContLang, $wgUser, $cegScriptPath, $cegEnableRatingForArticles, $wgJsMimeType;
 
 		# do checks #
@@ -139,16 +144,21 @@ class CECommentParserFunctions {
 				//continue
 				break;
 			case self::COMMENTS_DISABLED:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_cf_disabled'));
 				break;
 			case self::COMMENTS_FOR_NOT_DEF:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_var_undef', 'cegEnableCommentFor'));
 			case self::NOBODY_ALLOWED_TO_COMMENT:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_cf_all_not_allowed'));
 			case self::USER_NOT_ALLOWED_TO_COMMENT:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_cf_you_not_allowed')); 
 				break;
 			case self::FORM_ALREADY_SHOWN:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_cf_already_shown'));
 				break;
 			default:
@@ -296,6 +306,8 @@ class CECommentParserFunctions {
 				SMWOutputs::requireHeadItem('CEJS_Variables4', $script); 
 			}
 		self::$mInstance->mCommentFormDisplayed = true;
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
+
 		return $parser->insertStripItem( $html, $parser->mStripState );
 	}
 
@@ -305,6 +317,7 @@ class CECommentParserFunctions {
 	 * @param Parser $parser
 	 */
 	public static function getAverageRating(&$parser) {
+		wfProfileIn( __METHOD__ . ' [Collaboration]' );
 		$title = $parser->getTitle();
 		if (self::$mInstance->mTitle == null) {
 			self::$mInstance->mTitle = $title;
@@ -323,6 +336,7 @@ class CECommentParserFunctions {
 		);
 		$count = count( $queryResult );
 		if( $count == 0 ) {
+			wfProfileOut( __METHOD__ . ' [Collaboration]' );
 			return '';
 		}
 		$sum = 0;
@@ -331,6 +345,7 @@ class CECommentParserFunctions {
 			$sum += $res;
 		}
 
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
 		return $sum / $count;
 	}
 	/**
@@ -341,6 +356,7 @@ class CECommentParserFunctions {
 	 * @param Title $title
 	 */
 	public static function articleDelete(&$specialPage, &$title) {
+		wfProfileIn( __METHOD__ . ' [Collaboration]' );
 		$name = $title->getFullText();
 		// Check if the title has comment article(s)
 		if (empty($this->mRelCommentTitles))
@@ -349,6 +365,8 @@ class CECommentParserFunctions {
 			!empty($this->mRelCommentTitles)) {
 			$msg = CECommentStorage::deleteRelatedCommentArticles($this->mRelCommentTitles);
 		}
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
+
 		return true;
 	}
 
@@ -402,6 +420,7 @@ class CECommentParserFunctions {
 	 * @return status code (see defines at top)
 	 */
 	private function doInitialChecks(&$parser) {
+		wfProfileIn( __METHOD__ . ' [Collaboration]' );
 		global $cegContLang, $wgUser;
 		
 		$pfContLangName = $cegContLang->getParserFunction(CELanguage::CE_PF_SHOWCOMMENTS);
@@ -422,16 +441,21 @@ class CECommentParserFunctions {
 		global $cegEnableComment, $cegEnableCommentFor;
 		# check if comments enabled #
 		if ( !isset($cegEnableComment) || !$cegEnableComment ) {
+			wfProfileOut( __METHOD__ . ' [Collaboration]' );
 			return self::COMMENTS_DISABLED;
 		}
 		if ( !isset($cegEnableCommentFor) ) {
+			wfProfileOut( __METHOD__ . ' [Collaboration]' );
 			return self::COMMENTS_FOR_NOT_DEF;
 		}
 		# check authorization #
 		if ($cegEnableCommentFor == CE_COMMENT_NOBODY) {
+			wfProfileOut( __METHOD__ . ' [Collaboration]' );
 			return self::NOBODY_ALLOWED_TO_COMMENT;
 		} elseif ( ($cegEnableCommentFor == CE_COMMENT_AUTH_ONLY) &&
-			$wgUser->isAnon() ) {
+			$wgUser->isAnon() )
+		{
+			wfProfileOut( __METHOD__ . ' [Collaboration]' );
 			return self::USER_NOT_ALLOWED_TO_COMMENT;
 		} else {
 			//user is allowed
@@ -439,9 +463,11 @@ class CECommentParserFunctions {
 			if( self::$mInstance->mCommentFormDisplayed ) {
 				return self::FORM_ALREADY_SHOWN;
 			} else {*/
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::SUCCESS;
 			/*}*/
 		}
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
 
 		return self::SUCCESS;
 	}
