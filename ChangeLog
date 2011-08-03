@@ -1,6 +1,14 @@
 Collaboration extension ChangeLog
 =================================
 
+VERSION 1.31 patchlevel 2
+  FEATURES:
+  	Added  profiling information to trace code execution time
+  CHANGES:
+  	
+  BUGFIXES:
+
+
 VERSION 1.31 patchlevel 1
   FEATURES:
   	
@@ -8,6 +16,7 @@ VERSION 1.31 patchlevel 1
   	
   BUGFIXES:
   	14481 - Editing of comments was not possible in IE 8
+
 
 VERSION 1.31
   FEATURES:
@@ -18,6 +27,7 @@ VERSION 1.31
 	Issue 12823: Added average rating per article 
   BUGFIXES:
 	Issue 14050: Changed GUI regarding the user edit right.
+
 
 VERSION 1.30
 
