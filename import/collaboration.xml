@@ -63,28 +63,23 @@
     <title>Category:Comment</title>
     <id>104</id>
     <revision>
-      <id>2744</id>
-      <timestamp>2011-07-04T13:32:09Z</timestamp>
+      <timestamp>2011-07-06T12:56:29Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
       </contributor>
-      <text xml:space="preserve">{{Category}}
- __NOTOC__  __NOEDITSECTION__
+      <text xml:space="preserve">{{Category}} __NOTOC__  __NOEDITSECTION__
+
 == Information about this category ==
-[[Rationale::This category contains all comments created by the Collaboration Extension.]]
-[[Category has icon::File:Smw_plus_comment_icon_2_16x16.gif| ]]
-[[No automatic formedit::true| ]]
-{{Part of bundle|value=Collaboration}}
-{{Content hash|value=}}</text>
-    <hash>6490c9b3ff2f120adf2050fad3f00541</hash>
+
+[[Rationale::This category contains all comments created by the Collaboration Extension.]] [[Category has icon::File:Smw_plus_comment_icon_2_16x16.gif| ]] [[No automatic formedit::true| ]] {{Part of bundle|value=Collaboration}} {{Content hash|value=}}</text>
+    <hash>dc1bfd73c47293162cbf0c5167ff8a9a</hash>
     </revision>
   </page>
   <page>
     <title>Property:Has comment rating</title>
     <id>105</id>
     <revision>
-      <id>2736</id>
       <timestamp>2011-07-04T13:24:54Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -112,7 +107,6 @@
     <title>Property:Has comment date</title>
     <id>106</id>
     <revision>
-      <id>2733</id>
       <timestamp>2011-07-04T13:23:30Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -140,7 +134,6 @@
     <title>Property:Has comment text</title>
     <id>107</id>
     <revision>
-      <id>2737</id>
       <timestamp>2011-07-04T13:25:22Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -168,7 +161,6 @@
     <title>Property:Has comment person</title>
     <id>108</id>
     <revision>
-      <id>2735</id>
       <timestamp>2011-07-04T13:24:23Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -196,8 +188,7 @@
     <title>Template:CommentResult</title>
     <id>109</id>
     <revision>
-      <id>2750</id>
-      <timestamp>2011-07-04T13:46:11Z</timestamp>
+      <timestamp>2011-08-16T08:10:58Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
@@ -207,17 +198,8 @@
 [[Rationale::Used as result printer template.]]
 [[Category:Template]]
 &lt;/noinclude&gt;&lt;includeonly&gt;&lt;!-- start comment (do not change css-classes)
---&gt;{{#vardefine:resID
-|{{PAGENAMEE:{{#ifeq: {{#pos:{{{6}}}|:}} 
-| 
-| {{{6}}} 
-| {{#sub:{{{6}}}|{{#expr:{{#pos:{{{6}}}|:}}+1}}|0}} }} }} 
-}}
-{{#vardefine:myID
-|{{PAGENAMEE:{{#ifeq: {{#pos:{{{1}}}|:}} | | {{{1}}} | {{#sub:{{{1}}}|{{#expr:{{#pos:{{{1}}}|:}}+1}}|0}} }} }} 
-}}&lt;div class=&quot;collabComRes&quot; id=&quot;{{#var:myID}}&quot;&gt;&lt;!-- start comment information 
---&gt;&lt;div class=&quot;collabComResInfoSuper&quot;&gt;{{#var:resID}}&lt;/div&gt;
-&lt;div class=&quot;collabComResInfo&quot;&gt;{{#var:myID}}&lt;/div&gt;&lt;!-- end comment information 
+--&gt;{{#vardefine:resID|{{#bin2hex:{{{6}}}}}}}
+{{#vardefine:myID|{{#bin2hex:{{{1}}}}}}}&lt;div class=&quot;collabComRes&quot; id=&quot;{{#var:myID}}&quot;&gt;&lt;div class=&quot;collabComPlain&quot; style=&quot;display:none;&quot;&gt;{{{1}}}&lt;/div&gt;&lt;!-- start comment information --&gt;&lt;div class=&quot;collabComResInfoSuper&quot;&gt;{{#var:resID}}&lt;/div&gt;&lt;div class=&quot;collabComResInfoSuperPlain&quot; style=&quot;display:none&quot;&gt;{{{6}}}&lt;/div&gt;&lt;!-- end comment information 
 --&gt;&lt;!-- start comment person 
 --&gt;&lt;div class=&quot;collabComResPerson&quot;&gt;{{#if: {{{2|}}} 
 |{{#vardefine:userimage|{{#ask: [[{{{2}}}]] | ?User_image = | link=none}} }} 
@@ -245,14 +227,13 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
 {{Content hash|value=}}
 
 &lt;/noinclude&gt;</text>
-    <hash>d3838ffe8d38a6b2532181209bf067f9</hash>
+    <hash>0f6d7ba6efdf75c0469bd118786c36c8</hash>
     </revision>
   </page>
   <page>
     <title>Property:Belongs to article</title>
     <id>110</id>
     <revision>
-      <id>2738</id>
       <timestamp>2011-07-04T13:26:42Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -280,7 +261,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>Template:ShowCommentsIntern</title>
     <id>111</id>
     <revision>
-      <id>2758</id>
       <timestamp>2011-07-04T13:58:12Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -328,7 +308,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>Property:Comment was deleted</title>
     <id>121</id>
     <revision>
-      <id>2731</id>
       <timestamp>2011-07-04T13:20:18Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -356,7 +335,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>Property:Belongs to comment</title>
     <id>122</id>
     <revision>
-      <id>2739</id>
       <timestamp>2011-07-04T13:27:18Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -384,7 +362,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>File:Comment icon crystal.png</title>
     <id>123</id>
     <revision>
-      <id>1358</id>
       <timestamp>2011-04-19T13:00:04Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -399,7 +376,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>File:Bad active.png</title>
     <id>124</id>
     <revision>
-      <id>1356</id>
       <timestamp>2011-04-19T12:59:37Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -414,7 +390,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>File:Good active.png</title>
     <id>125</id>
     <revision>
-      <id>1357</id>
       <timestamp>2011-04-19T12:59:39Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -429,7 +404,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>File:Neutral active.png</title>
     <id>126</id>
     <revision>
-      <id>1355</id>
       <timestamp>2011-04-19T12:58:24Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -444,7 +418,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>File:Defaultuser.gif</title>
     <id>127</id>
     <revision>
-      <id>1359</id>
       <timestamp>2011-04-19T13:14:01Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -459,7 +432,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>Template:Comment</title>
     <id>166</id>
     <revision>
-      <id>2759</id>
       <timestamp>2011-07-04T15:10:51Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -518,7 +490,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>Template:ShowComments</title>
     <id>167</id>
     <revision>
-      <id>2755</id>
       <timestamp>2011-07-04T13:56:02Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -542,7 +513,6 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>Collaboration</title>
     <id>217</id>
     <revision>
-      <id>2729</id>
       <timestamp>2011-07-04T13:15:41Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -584,7 +554,6 @@ More information about the Collaboration extension and how to use it can be foun
     <title>Collaboration Sandbox</title>
     <id>262</id>
     <revision>
-      <id>936</id>
       <timestamp>2011-04-14T13:45:37Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -622,7 +591,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Comment:Collaboration Sandbox 1295602691794</title>
     <id>263</id>
     <revision>
-      <id>905</id>
       <timestamp>2011-04-14T12:45:02Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -641,7 +609,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Comment:Collaboration Sandbox 1295602913516</title>
     <id>264</id>
     <revision>
-      <id>906</id>
       <timestamp>2011-04-14T12:45:33Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -660,7 +627,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Comment:Collaboration Sandbox 1295602948268</title>
     <id>265</id>
     <revision>
-      <id>896</id>
       <timestamp>2011-04-14T12:06:43Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -679,7 +645,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Comment:Collaboration Sandbox 1295603031029</title>
     <id>266</id>
     <revision>
-      <id>895</id>
       <timestamp>2011-04-14T12:05:22Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -698,7 +663,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Comment:Collaboration Sandbox 1295603163565</title>
     <id>267</id>
     <revision>
-      <id>894</id>
       <timestamp>2011-04-14T12:05:14Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -717,7 +681,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Property:Has comment editor</title>
     <id>276</id>
     <revision>
-      <id>2734</id>
       <timestamp>2011-07-04T13:23:58Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -745,7 +708,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Property:Article has average rating</title>
     <id>285</id>
     <revision>
-      <id>2730</id>
       <timestamp>2011-07-04T13:18:11Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -773,7 +735,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>File:Smw plus comment icon 2 16x16.gif</title>
     <id>411</id>
     <revision>
-      <id>901</id>
       <timestamp>2011-04-14T12:20:57Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -792,7 +753,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>User:Collaboration</title>
     <id>483</id>
     <revision>
-      <id>891</id>
       <timestamp>2011-04-14T12:02:32Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -813,7 +773,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Show comments infobox for user</title>
     <id>484</id>
     <revision>
-      <id>2754</id>
       <timestamp>2011-07-04T13:55:06Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -837,7 +796,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Comments infobox for user</title>
     <id>485</id>
     <revision>
-      <id>2751</id>
       <timestamp>2011-07-04T13:51:12Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -882,7 +840,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Comments overview</title>
     <id>486</id>
     <revision>
-      <id>2752</id>
       <timestamp>2011-07-04T13:52:54Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -921,7 +878,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Comment row for user</title>
     <id>487</id>
     <revision>
-      <id>2749</id>
       <timestamp>2011-07-04T13:44:44Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -948,7 +904,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Best rated articles</title>
     <id>491</id>
     <revision>
-      <id>2747</id>
       <timestamp>2011-07-04T13:41:24Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -989,7 +944,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Article row for comment ratings</title>
     <id>492</id>
     <revision>
-      <id>2746</id>
       <timestamp>2011-07-04T13:40:15Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -1016,7 +970,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Show best rated articles</title>
     <id>493</id>
     <revision>
-      <id>2753</id>
       <timestamp>2011-07-04T13:54:13Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -1040,7 +993,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Collaboration best articles</title>
     <id>498</id>
     <revision>
-      <id>933</id>
       <timestamp>2011-04-14T13:40:05Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -1062,7 +1014,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Property:Has attached article</title>
     <id>651</id>
     <revision>
-      <id>2732</id>
       <timestamp>2011-07-04T13:21:00Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -1092,7 +1043,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Article row for comment attachments</title>
     <id>2268</id>
     <revision>
-      <id>4967</id>
       <timestamp>2011-07-06T11:43:05Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -1120,7 +1070,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     <title>Template:Comments with attached articles</title>
     <id>2269</id>
     <revision>
-      <id>4968</id>
       <timestamp>2011-07-06T11:43:32Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
@@ -1155,97 +1104,6 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
 
 &lt;/noinclude&gt;</text>
     <hash>dd3ffcb498fe1901eba39fd62738c55a</hash>
-    </revision>
-  </page>
-    <page>
-    <title>Template:Content hash</title>
-    <id>248</id>
-    <revision>
-      <id>257</id>
-      <timestamp>2010-12-21T14:25:49Z</timestamp>
-      <contributor>
-        <username>WikiSysop</username>
-        <id>1</id>
-      </contributor>
-      <text xml:space="preserve">[[Content hash::{{{value|}}}| ]]</text>
-    </revision>
-  </page>
-  <page>
-    <title>Template:Part of bundle</title>
-    <id>247</id>
-    <revision>
-      <id>256</id>
-      <timestamp>2010-12-21T14:25:58Z</timestamp>
-      <contributor>
-        <username>WikiSysop</username>
-        <id>1</id>
-      </contributor>
-    <text xml:space="preserve">[[Part of bundle::{{{value|}}}| ]]</text>
-    </revision>
-  </page>
-  <page>
-    <title>Widget:Facebook Like Button</title>
-    <id>353</id>
-    <revision>
-      <id>495</id>
-      <timestamp>2011-06-27T15:58:58Z</timestamp>
-      <contributor>
-        <username>WikiSysop</username>
-        <id>1</id>
-      </contributor>
-      <text xml:space="preserve">&lt;noinclude&gt;__NOTOC__
-This widget allows you to embed a '''[http://developers.facebook.com/docs/reference/plugins/like-box/ Facebook Page Like Box]''' (iframe version) on your wiki page.
-
-Created by [http://www.mediawikiwidgets.org/User:Chris_White Chris White]
-
-== Using this widget ==
-For information on how to use this widget, see [http://www.mediawikiwidgets.org/Facebook_Like_Box widget description page on MediaWikiWidgets.org].
-
-==Copy to your site==
-To use this widget on your site, just install [http://www.mediawiki.org/wiki/Extension:Widgets MediaWiki Widgets extension] and copy [{{fullurl:{{FULLPAGENAME}}|action=edit}} full source code] of this page to your wiki as '''{{PAGENAME}}''' article.
-
-=Attributes=
-
-href - the URL to like. The XFBML version defaults to the current page.
-send - specifies whether to include a Send button with the Like button. This only works with the XFBML version.
-layout - there are three options.
-standard - displays social text to the right of the button and friends' profile photos below. Minimum width: 225 pixels. Default width: 450 pixels. Height: 35 pixels (without photos) or 80 pixels (with photos).
-button_count - displays the total number of likes to the right of the button. Minimum width: 90 pixels. Default width: 90 pixels. Height: 20 pixels.
-box_count - displays the total number of likes above the button. Minimum width: 55 pixels. Default width: 55 pixels. Height: 65 pixels.
-show_faces - specifies whether to display profile photos below the button (standard layout only)
-width - the width of the Like button.
-action - the verb to display on the button. Options: 'like', 'recommend'
-font - the font to display in the button. Options: 'arial', 'lucida grande', 'segoe ui', 'tahoma', 'trebuchet ms', 'verdana'
-colorscheme - the color scheme for the like button. Options: 'light', 'dark'
-ref - a label for tracking referrals; must be less than 50 characters and can contain alphanumeric characters and some punctuation (currently +/=-.:_). The ref attribute causes two parameters to be added to the referrer URL when a user clicks a link from a stream story about a Like action:
-fb_ref - the ref parameter
-fb_source - the stream type ('home', 'profile', 'search', 'other') in which the click occurred and the story type ('oneline' or 'multiline'), concatenated with an underscore.
-
-&lt;/noinclude&gt;&lt;includeonly&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=&lt;!--{$profile}--&gt;&amp;amp;width=&lt;!--{$width|default:300|escape:'urlpathinfo'}--&gt;&amp;amp;colorscheme=&lt;!--{$theme|default:light|escape:'urlpathinfo'}--&gt;&amp;amp;show_faces=&lt;!--{$faces|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;stream=&lt;!--{$stream|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;header=false&amp;amp; height=&lt;!--{$height|default:556|escape:'urlpathinfo'}--&gt;&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:&lt;!--{$width|default:300|escape:'html'}--&gt;px; height:&lt;!--{$height|default:556|escape:'html'}--&gt;px&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/includeonly&gt;</text>
-    </revision>
-  </page>
-  <page>
-    <title>Widget:Facebook Like Box</title>
-    <id>444</id>
-    <revision>
-      <id>489</id>
-      <timestamp>2011-06-27T15:10:51Z</timestamp>
-      <contributor>
-        <username>WikiSysop</username>
-        <id>1</id>
-      </contributor>
-      <comment>Created page with &quot;&lt;noinclude&gt;__NOTOC__ This widget allows you to embed a '''[http://developers.facebook.com/docs/reference/plugins/like-box/ Facebook Page Like Box]''' (iframe version) on your wik...&quot;</comment>
-      <text xml:space="preserve">&lt;noinclude&gt;__NOTOC__
-This widget allows you to embed a '''[http://developers.facebook.com/docs/reference/plugins/like-box/ Facebook Page Like Box]''' (iframe version) on your wiki page.
-
-Created by [http://www.mediawikiwidgets.org/User:Chris_White Chris White]
-
-== Using this widget ==
-For information on how to use this widget, see [http://www.mediawikiwidgets.org/Facebook_Like_Box widget description page on MediaWikiWidgets.org].
-
-==Copy to your site==
-To use this widget on your site, just install [http://www.mediawiki.org/wiki/Extension:Widgets MediaWiki Widgets extension] and copy [{{fullurl:{{FULLPAGENAME}}|action=edit}} full source code] of this page to your wiki as '''{{PAGENAME}}''' article.
-&lt;/noinclude&gt;&lt;includeonly&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/likebox.php?href=&lt;!--{$profile}--&gt;&amp;amp;width=&lt;!--{$width|default:300|escape:'urlpathinfo'}--&gt;&amp;amp;colorscheme=&lt;!--{$theme|default:light|escape:'urlpathinfo'}--&gt;&amp;amp;show_faces=&lt;!--{$faces|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;stream=&lt;!--{$stream|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;header=false&amp;amp; height=&lt;!--{$height|default:556|escape:'urlpathinfo'}--&gt;&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:&lt;!--{$width|default:300|escape:'html'}--&gt;px; height:&lt;!--{$height|default:556|escape:'html'}--&gt;px&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/includeonly&gt;</text>
     </revision>
   </page>
 </mediawiki>
