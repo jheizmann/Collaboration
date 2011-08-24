@@ -522,7 +522,7 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
       </contributor>
       <text xml:space="preserve">{{Content bundle}}
 [[Rationale::This content bundle features a set of basic elements that are necessary for the Collaboration extension.| ]] {{Part of bundle|value=Collaboration}} [[Maintainer::ontoprise GmbH| ]] [[Vendor::ontoprise GmbH| ]] [[Help Url::http://smwforum.ontoprise.com/smwforum/index.php/Help:Collaboration_Extension | ]] [[Ontology version::140| ]] [[Installation dir::extensions/Collaboration| ]] 
-[[Dependency::Smwplus; 153; 153| ]][[Dependency::Richmedia; 152; 152| ]] [[License::GPL v2| ]] 
+[[Dependency::Smwplus; 156; 156| ]][[Dependency::Widgets; 091; 091| ]][[Dependency::Richmedia; 152; 152| ]] [[License::GPL v2| ]] 
 
 ;This content bundle comprises a set of articles that are necessary to make use of the Collaboration extension.
 
