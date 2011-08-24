@@ -515,14 +515,14 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>Collaboration</title>
     <id>217</id>
     <revision>
-      <timestamp>2011-07-04T13:15:41Z</timestamp>
+      <timestamp>2011-08-24T15:32:02Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
       </contributor>
       <text xml:space="preserve">{{Content bundle}}
 [[Rationale::This content bundle features a set of basic elements that are necessary for the Collaboration extension.| ]] {{Part of bundle|value=Collaboration}} [[Maintainer::ontoprise GmbH| ]] [[Vendor::ontoprise GmbH| ]] [[Help Url::http://smwforum.ontoprise.com/smwforum/index.php/Help:Collaboration_Extension | ]] [[Ontology version::140| ]] [[Installation dir::extensions/Collaboration| ]] 
-[[Dependency::Smwplus; 156; 156| ]][[Dependency::Widgets; 091; 091| ]][[Dependency::Richmedia; 152; 152| ]] [[License::GPL v2| ]] 
+[[Dependency::Smwplus; 153; 153| ]][[Dependency::Widgets; 092; 092| ]][[Dependency::Richmedia; 152; 152| ]] [[License::GPL v2| ]] 
 
 ;This content bundle comprises a set of articles that are necessary to make use of the Collaboration extension.
 
@@ -549,14 +549,14 @@ More information about the Collaboration extension and how to use it can be foun
 
 [[Category:Content bundle|Content_bundle]]
 {{Content hash|value=a5b59c7c93de4673e7a007ab705bdafa}}</text>
-    <hash>0ecb5655b71c11d921842631b60d9911</hash>
+    <hash>aa547de823b61607a3b49c4ccbe5ba42</hash>
     </revision>
   </page>
   <page>
     <title>Collaboration Sandbox</title>
     <id>262</id>
     <revision>
-      <timestamp>2011-08-24T15:01:01Z</timestamp>
+      <timestamp>2011-08-24T16:05:21Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
@@ -570,13 +570,13 @@ Have a look at [[User:Collaboration|the article of our sandbox user]] to discove
 }}
 &lt;/pre&gt; to these articles.
 
-We also created [[Collaboration_best_articles|a sample article to display the best rated articles]] in this wiki that calls [[Template:Show best rated articles]]. You can use this template call in any other pages, too. &lt;pre&gt;
+We also created [[/Collaboration_best_articles|a sample article to display the best rated articles]] in this wiki that calls [[Template:Show best rated articles]]. You can use this template call in any other pages, too. &lt;pre&gt;
 {{Show best rated articles
 |show=True
 }}
 &lt;/pre&gt;
 
-Since version 1.4.0 the Collaboration extension recommends to install the [http://www.mediawiki.org/wiki/Extension:Widgets Widgets extensions]. If you accepted this, [[Widget examples]] would make a quick impression about ''how to embed widgets'' to a page.
+Since version 1.4.0 the Collaboration extension recommends to install the [http://www.mediawiki.org/wiki/Extension:Widgets Widgets extensions]. If you accepted this, [[/Widget examples|these widget examples]] would make a quick impression about ''how to embed widgets'' to a page.
 
 More information can be found also in the [http://smwforum.ontoprise.com/smwforum/index.php?title=Help:Using_the_Collaboration_extension_1.4&amp;context=Help%3ACollaboration+extension+1.4 Collaboration extension help article]. Get this extension on our [http://smwforum.ontoprise.com/smwforum/index.php/Download download page]!
 
@@ -587,7 +587,7 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
 }}
 &lt;noinclude&gt;{{Part of bundle|value=Collaboration}}
 {{Content hash|value=}}&lt;/noinclude&gt;</text>
-    <hash>f88f9a185240296676b7e7424337c252</hash>
+    <hash>918118ae5c791df418d145a75158f20a</hash>
     </revision>
   </page>
   <page>
@@ -993,14 +993,16 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     </revision>
   </page>
   <page>
-    <title>Collaboration best articles</title>
+    <title>Collaboration Sandbox/Collaboration best articles</title>
     <id>498</id>
     <revision>
-      <timestamp>2011-04-14T13:40:05Z</timestamp>
+      <timestamp>2011-08-24T16:01:14Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>moved [[Collaboration best articles]] to [[Collaboration Sandbox/Collaboration best articles]]</comment>
       <text xml:space="preserve">This info box displays the best rated articles in this wiki.
 {{Show best rated articles
 |show=True
@@ -1110,10 +1112,10 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     </revision>
   </page>
   <page>
-    <title>Widget examples</title>
+    <title>Collaboration Sandbox/Widget examples</title>
     <id>2270</id>
     <revision>
-      <timestamp>2011-08-24T15:22:19Z</timestamp>
+      <timestamp>2011-08-24T15:58:48Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
