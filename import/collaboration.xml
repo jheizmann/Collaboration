@@ -556,7 +556,7 @@ More information about the Collaboration extension and how to use it can be foun
     <title>Collaboration Sandbox</title>
     <id>262</id>
     <revision>
-      <timestamp>2011-08-24T13:15:11Z</timestamp>
+      <timestamp>2011-08-24T15:01:01Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
@@ -576,7 +576,7 @@ We also created [[Collaboration_best_articles|a sample article to display the be
 }}
 &lt;/pre&gt;
 
-Since version 1.4.0 the Collaboration extension recommends to install the [http://www.mediawiki.org/wiki/Extension:Widgets Widgets extensions]. If you accepted this, [[Widgets Facebook example]] would make a quick impression about ''how to embed widgets'' to a page.
+Since version 1.4.0 the Collaboration extension recommends to install the [http://www.mediawiki.org/wiki/Extension:Widgets Widgets extensions]. If you accepted this, [[Widget examples]] would make a quick impression about ''how to embed widgets'' to a page.
 
 More information can be found also in the [http://smwforum.ontoprise.com/smwforum/index.php?title=Help:Using_the_Collaboration_extension_1.4&amp;context=Help%3ACollaboration+extension+1.4 Collaboration extension help article]. Get this extension on our [http://smwforum.ontoprise.com/smwforum/index.php/Download download page]!
 
@@ -587,7 +587,7 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
 }}
 &lt;noinclude&gt;{{Part of bundle|value=Collaboration}}
 {{Content hash|value=}}&lt;/noinclude&gt;</text>
-    <hash>e483bf4ea0de4646cb986971b79d790e</hash>
+    <hash>f88f9a185240296676b7e7424337c252</hash>
     </revision>
   </page>
   <page>
@@ -1110,54 +1110,67 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
     </revision>
   </page>
   <page>
-    <title>Widgets Facebook example</title>
+    <title>Widget examples</title>
     <id>2270</id>
     <revision>
-      <timestamp>2011-08-24T13:08:01Z</timestamp>
+      <timestamp>2011-08-24T15:22:19Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
       </contributor>
-      <minor/>
-      <comment>moved [[Test]] to [[Widgets Facebook example]]</comment>
-      <text xml:space="preserve">This is a small example pages about how to create Facebook widgets with the '''Widgets extension'''. Please consider [http://www.mediawiki.org/wiki/Extension:Widgets the official extension instructions] from Mediawiki.org for a detailed explanation of this extension.
+      <text xml:space="preserve">This is a small example page that contains recommended widgets from the '''Widgets extension''' that work without further configuration effort. 
+
+There are a lot of other very interesting widgets that my be worthwhile for you but they require underlying changes to your file system (write access for a sub folder in extension directory). Please consider [http://www.mediawiki.org/wiki/Extension:Widgets the official extension instructions] from Mediawiki.org for a detailed explanation about how to achieve that on your system.
+
+For example just have a look at the amasing [http://www.mediawikiwidgets.org/SlideShare SlideShare widget] or [http://www.mediawikiwidgets.org/Twitter Twitter widget] that can be embedded if you were able to achieve the additional configuration.
+
 
 We have taken our SMW+ Facebook page as an example to provide you with a simple use case.
 Feel free to modify these parser functions and use them in any wiki page you want to.
 
-&lt;pre&gt;{{#widget:Facebook Like Button
+&lt;pre&gt;{{#widget:Facebook Like Box
 |profile=http://www.facebook.com/pages/SMW/192198727472226
 |stream=false
 |faces=false
 |height=63
 }}&lt;/pre&gt;
-creates this Facebook Like Button:
+creates this Facebook Like Box (see http://www.mediawikiwidgets.org/Facebook_Like_Box):
 
-{{#widget:Facebook Like Button
+{{#widget:Facebook Like Box
 |profile=http://www.facebook.com/pages/SMW/192198727472226
 |stream=false
 |faces=false
 |height=63
 }}
 
-&lt;pre&gt;{{#widget:Facebook Like Box
-|profile=http://www.facebook.com/pages/SMW/192198727472226
-|stream=true
-|faces=true
-}}&lt;/pre&gt;
-creates a Facebook Like Box like this:
 
-{{#widget:Facebook Like Box
-|profile=http://www.facebook.com/pages/SMW/192198727472226
-|stream=true
-|faces=true
+A Google Calendar (more information is available at http://www.mediawikiwidgets.org/Google_Calendar) is embedded with this code:
+&lt;pre&gt;{{#widget:Google Calendar
+|id=si8ocqn3duj6f8int3h57jm8qeunplut@import.calendar.google.com
+|color=528800
+|id=p2m2av9dhrh4n1ub7jlsc68s7o@group.calendar.google.com
+|color=2952A3
+|id=usa@holiday.calendar.google.com
+|color=B1440E
+|title=TechPresentations, NYCResistor, US Holidays
+}}&lt;/pre&gt;
+and looks like this:
+
+{{#widget:Google Calendar
+|id=si8ocqn3duj6f8int3h57jm8qeunplut@import.calendar.google.com
+|color=528800
+|id=p2m2av9dhrh4n1ub7jlsc68s7o@group.calendar.google.com
+|color=2952A3
+|id=usa@holiday.calendar.google.com
+|color=B1440E
+|title=TechPresentations, NYCResistor, US Holidays
 }}
 
 &lt;noinclude&gt;
 {{Part of bundle|value=Collaboration}}
 {{Content hash|value=}}
 &lt;/noinclude&gt;</text>
-    <hash>f23ae63ac44450d337a8dc550f5f09cc</hash>
+    <hash>0b30c9783bf12cb87678e50f6ce31555</hash>
     </revision>
   </page>
   <page>
@@ -1188,47 +1201,29 @@ To use this widget on your site, just install [http://www.mediawiki.org/wiki/Ext
     </revision>
   </page>
   <page>
-    <title>Widget:Facebook Like Button</title>
-    <id>2283</id>
+    <title>Widget:Google Calendar</title>
+    <id>2284</id>
     <revision>
-      <timestamp>2011-08-24T13:04:44Z</timestamp>
+      <timestamp>2011-08-24T15:01:58Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
       </contributor>
-      <text xml:space="preserve">&lt;noinclude&gt;__NOTOC__
-This widget allows you to embed a '''[http://developers.facebook.com/docs/reference/plugins/like-box/ Facebook Page Like Box]''' (iframe version) on your wiki page.
+      <text xml:space="preserve">&lt;noinclude&gt;
+This widget allows you to add '''[http://www.google.com/calendar/embedhelper Google Calendar]''' widget to your wiki page.
 
-Created by [http://www.mediawikiwidgets.org/User:Chris_White Chris White]
+It was originally created by [http://www.mediawiki.org/wiki/User:Sergey_Chernyshev Sergey Chernyshev] for [http://www.techpresentations.org/Conferences#Current_.26_Upcoming_conferences upcoming conference calendar] on TechPresentations.org
 
 == Using this widget ==
-For information on how to use this widget, see [http://www.mediawikiwidgets.org/Facebook_Like_Box widget description page on MediaWikiWidgets.org].
+For information on how to use this widget, see [http://www.mediawikiwidgets.org/Google_Calendar widget description page on MediaWikiWidgets.org].
 
-==Copy to your site==
-To use this widget on your site, just install [http://www.mediawiki.org/wiki/Extension:Widgets MediaWiki Widgets extension] and copy [{{fullurl:{{FULLPAGENAME}}|action=edit}} full source code] of this page to your wiki as '''{{PAGENAME}}''' article.
-
-=Attributes=
-
-href - the URL to like. The XFBML version defaults to the current page.
-send - specifies whether to include a Send button with the Like button. This only works with the XFBML version.
-layout - there are three options.
-standard - displays social text to the right of the button and friends' profile photos below. Minimum width: 225 pixels. Default width: 450 pixels. Height: 35 pixels (without photos) or 80 pixels (with photos).
-button_count - displays the total number of likes to the right of the button. Minimum width: 90 pixels. Default width: 90 pixels. Height: 20 pixels.
-box_count - displays the total number of likes above the button. Minimum width: 55 pixels. Default width: 55 pixels. Height: 65 pixels.
-show_faces - specifies whether to display profile photos below the button (standard layout only)
-width - the width of the Like button.
-action - the verb to display on the button. Options: 'like', 'recommend'
-font - the font to display in the button. Options: 'arial', 'lucida grande', 'segoe ui', 'tahoma', 'trebuchet ms', 'verdana'
-colorscheme - the color scheme for the like button. Options: 'light', 'dark'
-ref - a label for tracking referrals; must be less than 50 characters and can contain alphanumeric characters and some punctuation (currently +/=-.:_). The ref attribute causes two parameters to be added to the referrer URL when a user clicks a link from a stream story about a Like action:
-fb_ref - the ref parameter
-fb_source - the stream type ('home', 'profile', 'search', 'other') in which the click occurred and the story type ('oneline' or 'multiline'), concatenated with an underscore.
-
-&lt;/noinclude&gt;&lt;includeonly&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=&lt;!--{$profile}--&gt;&amp;amp;width=&lt;!--{$width|default:300|escape:'urlpathinfo'}--&gt;&amp;amp;colorscheme=&lt;!--{$theme|default:light|escape:'urlpathinfo'}--&gt;&amp;amp;show_faces=&lt;!--{$faces|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;stream=&lt;!--{$stream|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;header=false&amp;amp; height=&lt;!--{$height|default:556|escape:'urlpathinfo'}--&gt;&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:&lt;!--{$width|default:300|escape:'html'}--&gt;px; height:&lt;!--{$height|default:556|escape:'html'}--&gt;px&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+== Copy to your site ==
+To use this widget on your site, just install [http://www.mediawiki.org/wiki/Extension:Widgets MediaWiki Widgets extension] and copy [{{fullurl:{{FULLPAGENAME}}|action=edit}} full source code] of this page to your wiki as '''{{FULLPAGENAME}}''' article.
+&lt;/noinclude&gt;&lt;includeonly&gt;&lt;iframe src=&quot;http://www.google.com/calendar/&lt;!--{if isset($app)}--&gt;hosted/&lt;!--{$app|escape:'urlpathinfo'}--&gt;/&lt;!--{/if}--&gt;embed?&lt;!--{if isset($title)}--&gt;title=&lt;!--{$title|escape:'urlpathinfo'}--&gt;&amp;amp;&lt;!--{/if}--&gt;&lt;!--{if isset($pvttk)}--&gt;pvttk=&lt;!--{$pvttk|escape:'urlpathinfo'}--&gt;&amp;amp;&lt;!--{/if}--&gt;&lt;!--{if is_array($id)}--&gt;&lt;!--{foreach from=$id item=i}--&gt;src=&lt;!--{$i|escape:'urlpathinfo'}--&gt;&amp;amp;&lt;!--{/foreach}--&gt;&lt;!--{else}--&gt;src=&lt;!--{$id|escape:'urlpathinfo'}--&gt;&amp;amp;&lt;!--{/if}--&gt;&lt;!--{if is_array($color)}--&gt;&lt;!--{foreach from=$color item=c}--&gt;color=%23&lt;!--{$c|escape:'urlpathinfo'}--&gt;&amp;amp;&lt;!--{/foreach}--&gt;&lt;!--{else}--&gt;color=%23&lt;!--{$color|escape:'urlpathinfo'}--&gt;&amp;amp;&lt;!--{/if}--&gt;height=&lt;!--{$height|escape:'urlpathinfo'|default:600}--&gt;&amp;amp;showTitle=&lt;!--{if isset($showtitle) and not $showtitle}--&gt;0&lt;!--{else}--&gt;1&lt;!--{/if}--&gt;&amp;amp;showNav=&lt;!--{if isset($shownav) and not $shownav}--&gt;0&lt;!--{else}--&gt;1&lt;!--{/if}--&gt;&amp;amp;showDate=&lt;!--{if isset($showdate) and not $showdate}--&gt;0&lt;!--{else}--&gt;1&lt;!--{/if}--&gt;&amp;amp;showTabs=&lt;!--{if isset($showtabs) and not $showtabs}--&gt;0&lt;!--{else}--&gt;1&lt;!--{/if}--&gt;&amp;amp;showCalendars=&lt;!--{if isset($showcals) and not $showcals}--&gt;0&lt;!--{else}--&gt;1&lt;!--{/if}--&gt;&amp;amp;showPrint=&lt;!--{if isset($showprint) and not $showprint}--&gt;0&lt;!--{else}--&gt;1&lt;!--{/if}--&gt;&amp;amp;showTz=&lt;!--{if isset($showtz) and not $showtz}--&gt;0&lt;!--{else}--&gt;1&lt;!--{/if}--&gt;&amp;amp;wkst=&lt;!--{$weekstart|escape:'urlpathinfo'|default:1}--&gt;&amp;amp;hl=&lt;!--{$lang|escape:'urlpathinfo'|default:en}--&gt;&amp;amp;mode=&lt;!--{$view|escape:'urlpathinfo'|default:MONTH}--&gt;&amp;amp;&lt;!--{if isset($timezone)}--&gt;ctz=&lt;!--{$timezone|escape:'urlpathinfo'}--&gt;&amp;amp;&lt;!--{/if}--&gt;&lt;!--{if isset($bgcolor)}--&gt;bgcolor=%23&lt;!--{$bgcolor|escape:'urlpathinfo'}--&gt;&lt;!--{/if}--&gt;&quot; width=&quot;&lt;!--{$width|escape:'html'|default:'100%'}--&gt;&quot; height=&quot;&lt;!--{$height|escape:'html'|default:600}--&gt;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&lt;!--{if isset($border)}--&gt; style=&quot;border: solid 1px #777&quot;&lt;!--{/if}--&gt;&lt;!--{if isset($style)}--&gt; style=&quot;&lt;!--{$style|escape:'html'}--&gt;&quot;&lt;!--{/if}--&gt;&gt;&lt;/iframe&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
 {{Part of bundle|value=Collaboration}}
 {{Content hash|value=}}
 &lt;/noinclude&gt;</text>
-    <hash>c655717a84898dd21370e5a38c0f3bc7</hash>
+    <hash>1d29a776bd165351750bf836001ee0e5</hash>
     </revision>
   </page>
   <page>
@@ -1319,6 +1314,32 @@ fb_source - the stream type ('home', 'profile', 'search', 'other') in which the 
 [[Rationale::A small sample comment for the Sandbox of the Collaboration extension in this Wiki.| ]]
 &lt;/noinclude&gt;</text>
     <hash>cc8a19a41ca12f284ae6865def786843</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Content hash</title>
+    <id>248</id>
+    <revision>
+      <id>257</id>
+      <timestamp>2010-12-21T14:25:49Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve">[[Content hash::{{{value|}}}| ]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Part of bundle</title>
+    <id>247</id>
+    <revision>
+      <id>256</id>
+      <timestamp>2010-12-21T14:25:58Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+    <text xml:space="preserve">[[Part of bundle::{{{value|}}}| ]]</text>
     </revision>
   </page>
 </mediawiki>
