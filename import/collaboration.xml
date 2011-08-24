@@ -49,6 +49,8 @@
       <namespace key="203" case="first-letter">TermImport talk</namespace>
       <namespace key="220" case="first-letter">E-mail</namespace>
       <namespace key="221" case="first-letter">E-mail talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
       <namespace key="300" case="first-letter">ACL</namespace>
       <namespace key="301" case="first-letter">ACL talk</namespace>
       <namespace key="400" case="first-letter">IAI</namespace>
@@ -261,7 +263,7 @@ begin attached files --&gt;{{#if:{{{10|}}}|&lt;div class=&quot;collabComResFileA
     <title>Template:ShowCommentsIntern</title>
     <id>111</id>
     <revision>
-      <timestamp>2011-07-04T13:58:12Z</timestamp>
+      <timestamp>2011-08-24T11:50:35Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
@@ -554,12 +556,11 @@ More information about the Collaboration extension and how to use it can be foun
     <title>Collaboration Sandbox</title>
     <id>262</id>
     <revision>
-      <timestamp>2011-04-14T13:45:37Z</timestamp>
+      <timestamp>2011-08-24T13:15:11Z</timestamp>
       <contributor>
         <username>WikiSysop</username>
         <id>1</id>
       </contributor>
-      <comment>Undo revision 935 by [[Special:Contributions/WikiSysop|WikiSysop]] ([[User talk:WikiSysop|talk]])</comment>
       <text xml:space="preserve">= Collaboration Sandbox =
 Just click on '''&quot;Show comments&quot;''' below to read and add comments.
 
@@ -575,7 +576,9 @@ We also created [[Collaboration_best_articles|a sample article to display the be
 }}
 &lt;/pre&gt;
 
-More information can be found also in the [http://smwforum.ontoprise.com/smwforum/index.php?title=Help:Using_the_Collaboration_extension_1.3&amp;context=Help%3ACollaboration+extension+1.3 Collaboration extension help article]. Get this extension on our [http://smwforum.ontoprise.com/smwforum/index.php/Download download page]!
+Since version 1.4.0 the Collaboration extension recommends to install the [http://www.mediawiki.org/wiki/Extension:Widgets Widgets extensions]. If you accepted this, [[Widgets Facebook example]] would make a quick impression about ''how to embed widgets'' to a page.
+
+More information can be found also in the [http://smwforum.ontoprise.com/smwforum/index.php?title=Help:Using_the_Collaboration_extension_1.4&amp;context=Help%3ACollaboration+extension+1.4 Collaboration extension help article]. Get this extension on our [http://smwforum.ontoprise.com/smwforum/index.php/Download download page]!
 
 [[Rationale::A small Sandbox of the Collaboration extension in this Wiki to give you a smooth start.| ]]
 
@@ -584,7 +587,7 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
 }}
 &lt;noinclude&gt;{{Part of bundle|value=Collaboration}}
 {{Content hash|value=}}&lt;/noinclude&gt;</text>
-    <hash>f6e68b8075bd7ce12abb79f7cd7bd7bc</hash>
+    <hash>e483bf4ea0de4646cb986971b79d790e</hash>
     </revision>
   </page>
   <page>
@@ -1104,6 +1107,218 @@ More information can be found also in the [http://smwforum.ontoprise.com/smwforu
 
 &lt;/noinclude&gt;</text>
     <hash>dd3ffcb498fe1901eba39fd62738c55a</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Widgets Facebook example</title>
+    <id>2270</id>
+    <revision>
+      <timestamp>2011-08-24T13:08:01Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>moved [[Test]] to [[Widgets Facebook example]]</comment>
+      <text xml:space="preserve">This is a small example pages about how to create Facebook widgets with the '''Widgets extension'''. Please consider [http://www.mediawiki.org/wiki/Extension:Widgets the official extension instructions] from Mediawiki.org for a detailed explanation of this extension.
+
+We have taken our SMW+ Facebook page as an example to provide you with a simple use case.
+Feel free to modify these parser functions and use them in any wiki page you want to.
+
+&lt;pre&gt;{{#widget:Facebook Like Button
+|profile=http://www.facebook.com/pages/SMW/192198727472226
+|stream=false
+|faces=false
+|height=63
+}}&lt;/pre&gt;
+creates this Facebook Like Button:
+
+{{#widget:Facebook Like Button
+|profile=http://www.facebook.com/pages/SMW/192198727472226
+|stream=false
+|faces=false
+|height=63
+}}
+
+&lt;pre&gt;{{#widget:Facebook Like Box
+|profile=http://www.facebook.com/pages/SMW/192198727472226
+|stream=true
+|faces=true
+}}&lt;/pre&gt;
+creates a Facebook Like Box like this:
+
+{{#widget:Facebook Like Box
+|profile=http://www.facebook.com/pages/SMW/192198727472226
+|stream=true
+|faces=true
+}}
+
+&lt;noinclude&gt;
+{{Part of bundle|value=Collaboration}}
+{{Content hash|value=}}
+&lt;/noinclude&gt;</text>
+    <hash>f23ae63ac44450d337a8dc550f5f09cc</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Widget:Facebook Like Box</title>
+    <id>2282</id>
+    <revision>
+      <timestamp>2011-08-24T14:28:17Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve">&lt;noinclude&gt;__NOTOC__
+This widget allows you to embed a '''[http://developers.facebook.com/docs/reference/plugins/like-box/ Facebook Page Like Box]''' (iframe version) on your wiki page.
+
+Created by [http://www.mediawikiwidgets.org/User:Chris_White Chris White]
+
+== Using this widget ==
+For information on how to use this widget, see [http://www.mediawikiwidgets.org/Facebook_Like_Box widget description page on MediaWikiWidgets.org].
+
+==Copy to your site==
+To use this widget on your site, just install [http://www.mediawiki.org/wiki/Extension:Widgets MediaWiki Widgets extension] and copy [{{fullurl:{{FULLPAGENAME}}|action=edit}} full source code] of this page to your wiki as '''{{PAGENAME}}''' article.
+&lt;/noinclude&gt;&lt;includeonly&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/likebox.php?href=&lt;!--{$profile}--&gt;&amp;amp;width=&lt;!--{$width|default:300|escape:'urlpathinfo'}--&gt;&amp;amp;colorscheme=&lt;!--{$theme|default:light|escape:'urlpathinfo'}--&gt;&amp;amp;show_faces=&lt;!--{$faces|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;stream=&lt;!--{$stream|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;header=false&amp;amp; height=&lt;!--{$height|default:556|escape:'urlpathinfo'}--&gt;&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:&lt;!--{$width|default:300|escape:'html'}--&gt;px; height:&lt;!--{$height|default:556|escape:'html'}--&gt;px&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/includeonly&gt;
+&lt;noinclude&gt;
+{{Part of bundle|value=Collaboration}}
+{{Content hash|value=}}
+&lt;/noinclude&gt;</text>
+    <hash>6e1bae2ac462c90918d97425fc2e6d24</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Widget:Facebook Like Button</title>
+    <id>2283</id>
+    <revision>
+      <timestamp>2011-08-24T13:04:44Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve">&lt;noinclude&gt;__NOTOC__
+This widget allows you to embed a '''[http://developers.facebook.com/docs/reference/plugins/like-box/ Facebook Page Like Box]''' (iframe version) on your wiki page.
+
+Created by [http://www.mediawikiwidgets.org/User:Chris_White Chris White]
+
+== Using this widget ==
+For information on how to use this widget, see [http://www.mediawikiwidgets.org/Facebook_Like_Box widget description page on MediaWikiWidgets.org].
+
+==Copy to your site==
+To use this widget on your site, just install [http://www.mediawiki.org/wiki/Extension:Widgets MediaWiki Widgets extension] and copy [{{fullurl:{{FULLPAGENAME}}|action=edit}} full source code] of this page to your wiki as '''{{PAGENAME}}''' article.
+
+=Attributes=
+
+href - the URL to like. The XFBML version defaults to the current page.
+send - specifies whether to include a Send button with the Like button. This only works with the XFBML version.
+layout - there are three options.
+standard - displays social text to the right of the button and friends' profile photos below. Minimum width: 225 pixels. Default width: 450 pixels. Height: 35 pixels (without photos) or 80 pixels (with photos).
+button_count - displays the total number of likes to the right of the button. Minimum width: 90 pixels. Default width: 90 pixels. Height: 20 pixels.
+box_count - displays the total number of likes above the button. Minimum width: 55 pixels. Default width: 55 pixels. Height: 65 pixels.
+show_faces - specifies whether to display profile photos below the button (standard layout only)
+width - the width of the Like button.
+action - the verb to display on the button. Options: 'like', 'recommend'
+font - the font to display in the button. Options: 'arial', 'lucida grande', 'segoe ui', 'tahoma', 'trebuchet ms', 'verdana'
+colorscheme - the color scheme for the like button. Options: 'light', 'dark'
+ref - a label for tracking referrals; must be less than 50 characters and can contain alphanumeric characters and some punctuation (currently +/=-.:_). The ref attribute causes two parameters to be added to the referrer URL when a user clicks a link from a stream story about a Like action:
+fb_ref - the ref parameter
+fb_source - the stream type ('home', 'profile', 'search', 'other') in which the click occurred and the story type ('oneline' or 'multiline'), concatenated with an underscore.
+
+&lt;/noinclude&gt;&lt;includeonly&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=&lt;!--{$profile}--&gt;&amp;amp;width=&lt;!--{$width|default:300|escape:'urlpathinfo'}--&gt;&amp;amp;colorscheme=&lt;!--{$theme|default:light|escape:'urlpathinfo'}--&gt;&amp;amp;show_faces=&lt;!--{$faces|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;stream=&lt;!--{$stream|default:true|escape:'urlpathinfo'|validate:'boolean'}--&gt;&amp;amp;header=false&amp;amp; height=&lt;!--{$height|default:556|escape:'urlpathinfo'}--&gt;&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:&lt;!--{$width|default:300|escape:'html'}--&gt;px; height:&lt;!--{$height|default:556|escape:'html'}--&gt;px&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+{{Part of bundle|value=Collaboration}}
+{{Content hash|value=}}
+&lt;/noinclude&gt;</text>
+    <hash>c655717a84898dd21370e5a38c0f3bc7</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Comment:Collaboration Sandbox 1295602691794</title>
+    <id>263</id>
+    <revision>
+      <timestamp>2011-04-14T12:45:02Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve">{{Comment|CommentPerson=User:Collaboration|CommentRelatedArticle=Collaboration_Sandbox|CommentRating=1|CommentDatetime=2011-01-21T10:38:11+01:00|CommentContent=Do you want to let your visitors have a say and encourage discussions in your wiki? Then introduce meta talking with the Collaboration extension.|}}
+&lt;noinclude&gt;
+{{Part of bundle|value=Collaboration}}
+{{Content hash|value=}}
+[[Rationale::A small sample comment for the Sandbox of the Collaboration extension in this Wiki.| ]]
+&lt;/noinclude&gt;</text>
+    <hash>cb546e04b624a3cb2e1b07ed1067086e</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Comment:Collaboration Sandbox 1295602913516</title>
+    <id>264</id>
+    <revision>
+      <timestamp>2011-04-14T12:45:33Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve">{{Comment|CommentPerson=User:Collaboration|CommentRelatedArticle=Collaboration_Sandbox|CommentRating=1|CommentDatetime=2011-01-21T10:41:52+01:00|CommentContent=Communicating about topics and media is a basic community feature. You can upgrade your wiki essentially if you allow your visitors to present and discuss their opinions about certain articles. Or you would like to set up a conversation focused wiki where commenting is the superordinate and actual objective and therefore always available. You can have it your way and expand the attraction of your wiki in any case. |}}
+&lt;noinclude&gt;
+{{Part of bundle|value=Collaboration}}
+{{Content hash|value=}}
+[[Rationale::A small sample comment for the Sandbox of the Collaboration extension in this Wiki.| ]]
+&lt;/noinclude&gt;</text>
+    <hash>76c354a3478aa2d2bda1c500b02a69e6</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Comment:Collaboration Sandbox 1295602948268</title>
+    <id>265</id>
+    <revision>
+      <timestamp>2011-04-14T12:06:43Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve">{{Comment|CommentPerson=User:Collaboration|CommentRelatedArticle=Collaboration_Sandbox|CommentRelatedComment=Comment:Collaboration_Sandbox_1295602913516|CommentDatetime=2011-01-21T10:42:27+01:00|CommentContent=So let people take part and rate contents with the Collaboration extension.|}}
+&lt;noinclude&gt;
+{{Part of bundle|value=Collaboration}}
+{{Content hash|value=}}
+[[Rationale::A small sample comment for the Sandbox of the Collaboration extension in this Wiki.| ]]
+&lt;/noinclude&gt;</text>
+    <hash>805daee6005bee77b252ca0ec0b3646f</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Comment:Collaboration Sandbox 1295603031029</title>
+    <id>266</id>
+    <revision>
+      <timestamp>2011-04-14T12:05:22Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve">{{Comment|CommentPerson=User:Collaboration|CommentRelatedArticle=Collaboration_Sandbox|CommentDatetime=2011-01-21T10:43:50+01:00|CommentContent=The features of the Collaboration extension&amp;#58; &lt;br /&gt;Let your visitors comment and rate articles and contents &lt;br /&gt;Allow discussions about and replies to expressed opinions &lt;br /&gt;Aggregate comments in different ways (e.g. lists of all exisiting comments, the 10 latest comments or all contributions of a certain user)|}}
+&lt;noinclude&gt;
+{{Part of bundle|value=Collaboration}}
+{{Content hash|value=}}
+[[Rationale::A small sample comment for the Sandbox of the Collaboration extension in this Wiki.| ]]
+&lt;/noinclude&gt;</text>
+    <hash>363d82900dc5c2f336bb5b2ce8594251</hash>
+    </revision>
+  </page>
+  <page>
+    <title>Comment:Collaboration Sandbox 1295603163565</title>
+    <id>267</id>
+    <revision>
+      <timestamp>2011-04-14T12:05:14Z</timestamp>
+      <contributor>
+        <username>WikiSysop</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve">{{Comment|CommentPerson=User:Collaboration|CommentRelatedArticle=Collaboration_Sandbox|CommentRelatedComment=Comment:Collaboration_Sandbox_1295603031029|CommentDatetime=2011-01-21T10:46:02+01:00|CommentContent=You can download this extension here&amp;#58; http&amp;#58;&amp;#47;&amp;#47;smwforum.ontoprise.com&amp;#47;smwforum&amp;#47;index.php&amp;#47;Download#SUITE_OF_HALO_EXTENSIONS|}}
+&lt;noinclude&gt;
+{{Part of bundle|value=Collaboration}}
+{{Content hash|value=}}
+[[Rationale::A small sample comment for the Sandbox of the Collaboration extension in this Wiki.| ]]
+&lt;/noinclude&gt;</text>
+    <hash>cc8a19a41ca12f284ae6865def786843</hash>
     </revision>
   </page>
 </mediawiki>
