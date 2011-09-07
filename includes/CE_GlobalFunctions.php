@@ -115,7 +115,8 @@ function cefSetupExtension() {
 		'version' => CE_VERSION,
 		'author' => "Benjamin Langguth and others. Owned by [http://www.ontoprise.de ontoprise GmbH].",
 		'url' => 'http://smwforum.ontoprise.com/smwforum/index.php/Help:Collaboration_Extension',
-		'description' => 'Some fancy collaboration tools.'
+		'description' => 'The Collaboration extension allows to offer discussions in a fancy way. ' .
+			'Users can add comments (also with file attachments) as well as ratings to articles.'
 		);
 
 	### Register autocompletion icon ###
