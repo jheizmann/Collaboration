@@ -8,11 +8,14 @@
 		<maintainer>ontoprise GmbH</maintainer>
 		<instdir>extensions/Collaboration</instdir>
 		<description>
-			Add fancy collaboration stuff to your wiki.
+The Collaboration extension allows to offer discussions in a fancy way.  
+Users can add comments (also with file attachments) as well as ratings to 
+articles. Moreover, comments can be tracked by querying e.g. for certain  
+users or the 10 latest contributions.
 		</description>
 		<helpurl>http://smwforum.ontoprise.com/smwforum/index.php/Help:Collaboration_Extension</helpurl>
 		<dependencies>
-			<dependency from="153" to="156">smwplus</dependency>
+			<dependency from="156" to="156">smwplus</dependency>
 			<dependency from="092" optional="true">widgets</dependency>
 			<dependency from="152" optional="true">richmedia</dependency>
 		</dependencies>

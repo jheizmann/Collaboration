@@ -47,6 +47,8 @@ function cefInitCommentParserfunctions() {
 	$wgParser->setFunctionHook( 'showcommentform', array( 'CECommentParserFunctions', 'showcommentform' ) );
 	$wgParser->setFunctionHook( 'averagerating', array( 'CECommentParserFunctions', 'getAverageRating' ) );
 	$wgParser->setFunctionHook( 'arraymapce', array( 'CECommentParserFunctions', 'renderArrayMap' ) );
+	$wgParser->setFunctionHook( 'bin2hex', array( 'CECommentParserFunctions', 'ceBin2Hex' ) );
+	
 	return true;
 }
 
@@ -55,6 +57,7 @@ function cefCommentLanguageGetMagic( &$magicWords, $langCode ) {
 	$magicWords['showcommentform'] = array(0, 'showcommentform' );
 	$magicWords['averagerating'] = array( 0, 'averagerating' );
 	$magicWords['arraymapce'] = array ( 0, 'arraymapce' );
+	$magicWords['bin2hex'] = array ( 0, 'bin2hex' );
 
 	return true;
 }
@@ -127,6 +130,7 @@ class CECommentParserFunctions {
 	 * 			... if there's sthg wrong, that can not be caught by CE itself
 	 */
 	public static function showcommentform(&$parser) {
+		wfProfileIn( __METHOD__ . ' [Collaboration]' );
 		global $cegContLang, $wgUser, $cegScriptPath, $cegEnableRatingForArticles,
 			$cegEnableFileAttachments, $cegUseRMUploadFunc, $cegDefaultDelimiter,
 			$smwgEnableRichMedia, $wgJsMimeType, $wgParser;
@@ -139,19 +143,22 @@ class CECommentParserFunctions {
 				//continue
 				break;
 			case self::COMMENTS_DISABLED:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_cf_disabled'));
-				break;
 			case self::COMMENTS_FOR_NOT_DEF:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_var_undef', 'cegEnableCommentFor'));
 			case self::NOBODY_ALLOWED_TO_COMMENT:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_cf_all_not_allowed'));
 			case self::USER_NOT_ALLOWED_TO_COMMENT:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_cf_you_not_allowed')); 
-				break;
 			case self::FORM_ALREADY_SHOWN:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				return self::$mInstance->commentFormWarning(wfMsg('ce_cf_already_shown'));
-				break;
 			default:
+				wfProfileOut( __METHOD__ . ' [Collaboration]' );
 				throw new CEException(CEException::INTERNAL_ERROR, __METHOD__ . ": Unknown value `{$status}` <br/>" );
 		}
 
@@ -325,6 +332,8 @@ class CECommentParserFunctions {
 				SMWOutputs::requireHeadItem('CEJS_Variables4', $script); 
 			}
 		self::$mInstance->mCommentFormDisplayed = true;
+
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
 		return $parser->insertStripItem( $html, $parser->mStripState );
 	}
 
@@ -334,6 +343,7 @@ class CECommentParserFunctions {
 	 * @param Parser $parser
 	 */
 	public static function getAverageRating(&$parser) {
+		wfProfileIn( __METHOD__ . ' [Collaboration]' );
 		$title = $parser->getTitle();
 		if (self::$mInstance->mTitle == null) {
 			self::$mInstance->mTitle = $title;
@@ -352,6 +362,7 @@ class CECommentParserFunctions {
 		);
 		$count = count( $queryResult );
 		if( $count == 0 ) {
+			wfProfileOut( __METHOD__ . ' [Collaboration]' );
 			return '';
 		}
 		$sum = 0;
@@ -360,9 +371,20 @@ class CECommentParserFunctions {
 			$sum += $res;
 		}
 
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
 		return $sum / $count;
 	}
-	
+
+	/**
+	 * Function to convert binary strings to hex equivalents.
+	 * 
+	 * @param Parser $parser
+	 * @param String $str
+	 */
+	public static function ceBin2Hex ( &$parser, $str = '' ) {
+		return bin2hex( $str );
+	}
+
 	/**
 	 * This function is equal to Semantic Form's parser function 'arraymap'
 	 * to store attached articles as property values.
@@ -378,6 +400,7 @@ class CECommentParserFunctions {
 	 * @param delimiter the new delimiter
 	 */
 	static function renderArrayMap( &$parser, $value = '', $delimiter = ',', $var = 'x', $formula = 'x', $new_delimiter = ', ' ) {
+		wfProfileIn( __METHOD__ . ' [Collaboration]' );
 		// let '\n' represent newlines - chances that anyone will
 		// actually need the '\n' literal are small
 		$delimiter = str_replace( '\n', "\n", $delimiter );
@@ -399,6 +422,8 @@ class CECommentParserFunctions {
 				$results[] = str_replace( $var, $cur_value, $formula );
 			}
 		}
+
+		wfProfileOut( __METHOD__ . ' [Collaboration]' );
 		return implode( $new_delimiter, $results );
 	}
 	
