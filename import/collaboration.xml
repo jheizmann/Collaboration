@@ -570,13 +570,13 @@ Have a look at [[User:Collaboration|the article of our sandbox user]] to discove
 }}
 &lt;/pre&gt; to these articles.
 
-We also created [[/Collaboration_best_articles|a sample article to display the best rated articles]] in this wiki that calls [[Template:Show best rated articles]]. You can use this template call in any other pages, too. &lt;pre&gt;
+We also created [[Collaboration_Sandbox/Collaboration_best_articles|a sample article to display the best rated articles]] in this wiki that calls [[Template:Show best rated articles]]. You can use this template call in any other pages, too. &lt;pre&gt;
 {{Show best rated articles
 |show=True
 }}
 &lt;/pre&gt;
 
-Since version 1.4.0 the Collaboration extension recommends to install the [http://www.mediawiki.org/wiki/Extension:Widgets Widgets extensions]. If you accepted this, [[/Widget examples|these widget examples]] would make a quick impression about ''how to embed widgets'' to a page.
+Since version 1.4.0 the Collaboration extension recommends to install the [http://www.mediawiki.org/wiki/Extension:Widgets Widgets extensions]. If you accepted this, [[Collaboration_Sandbox/Widget examples|these widget examples]] would make a quick impression about ''how to embed widgets'' to a page.
 
 More information can be found also in the [http://smwforum.ontoprise.com/smwforum/index.php?title=Help:Using_the_Collaboration_extension_1.4&amp;context=Help%3ACollaboration+extension+1.4 Collaboration extension help article]. Get this extension on our [http://smwforum.ontoprise.com/smwforum/index.php/Download download page]!
 
