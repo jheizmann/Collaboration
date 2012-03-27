@@ -84,9 +84,9 @@
   <target name="deployscripts">
     <echo>Pack javascripts for Collaboration</echo>
     <java fork="true" jar="../../../buildtools/closure/compiler.jar" failonerror="true">
-      <arg value="--js=../../Collaboration/scripts/overlay.js" />
-      <arg value="--js=../../Collaboration/scripts/Comment/CE_Comment.js" />
-      <arg value="--js_output_file=../../Collaboration/scripts/deployCollaboration.js" />
+      <arg value="--js=${basedir}/../scripts/overlay.js" />
+      <arg value="--js=${basedir}/../scripts/Comment/CE_Comment.js" />
+      <arg value="--js_output_file=${basedir}/../scripts/deployCollaboration.js" />
     </java>
   </target>
 </project>
