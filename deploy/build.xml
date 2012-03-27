@@ -61,18 +61,6 @@
   </target>
 
   <target name="collaboration_bundled" depends="Collaboration_build">
-    <ant antfile="../../ApplicationProgramming/deploy/build.xml"
-         inheritall="true"
-         dir="../../ApplicationProgramming/deploy"
-         target="build">
-    </ant>
-
-    <copy todir="bin/zip/extensions/ApplicationProgramming">
-      <fileset dir="../../ApplicationProgramming/">
-        <exclude name="**/.svn, **/CVS" />
-        <exclude name="**/deploy/**" />
-      </fileset>
-    </copy>
     <zip destfile="bin/collaboration_bundled.zip" basedir="bin/zip" />
     <delete dir="bin/zip" quiet="true" />
     <exec executable="php">
